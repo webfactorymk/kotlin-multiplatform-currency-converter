@@ -1,0 +1,12 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin-platform-common") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+rootProject.name = 'currency-converter'
+
+include 'currency-converter-core', 'currency-converter-core:currency-converter-jvm', 'currency-converter-core:currency-converter-js'

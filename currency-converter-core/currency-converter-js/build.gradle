@@ -1,0 +1,12 @@
+plugins {
+    id 'kotlin-platform-js'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js"
+    expectedBy project(":currency-converter-core")
+    testCompile "org.jetbrains.kotlin:kotlin-test-js"
+}
