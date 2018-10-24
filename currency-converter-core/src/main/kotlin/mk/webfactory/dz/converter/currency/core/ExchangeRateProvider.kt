@@ -4,6 +4,8 @@ interface ExchangeRateProvider {
 
     /**
      * Get all [ExchangeRate]s from this provider.
+     *
+     * @throws UnsupportedOperationException If operation is not supported by provider
      */
     fun getAllExchangeRates(): Map<FromToCurrencyPair, ExchangeRate>
 
