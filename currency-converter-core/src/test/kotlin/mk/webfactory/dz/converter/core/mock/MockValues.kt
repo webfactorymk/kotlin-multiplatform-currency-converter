@@ -1,6 +1,5 @@
 package mk.webfactory.dz.converter.core.mock
 
-import mk.webfactory.dz.converter.core.*
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.EUR
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.USD
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.YEN
@@ -21,9 +20,9 @@ class MockProvider : ExchangeRateProvider {
 
     override fun getAllExchangeRates(): Map<FromToCurrencyPair, ExchangeRate> = HashMap(mockRates_EurUsdYen)
 
-    override fun getExchangeRate(fromToCurrencyPair: FromToCurrencyPair): ExchangeRate =
-            mockRates_EurUsdYen[fromToCurrencyPair] ?: throw RateNotAvailableException()
+    override fun getExchangeRate(fromTo: FromToCurrencyPair): ExchangeRate =
+            mockRates_EurUsdYen[fromTo] ?: throw RateNotAvailableException()
 
-    override fun isRateAvailable(fromToCurrencyPair: FromToCurrencyPair): Boolean =
-            mockRates_EurUsdYen.containsKey(fromToCurrencyPair)
+    override fun isRateAvailable(fromTo: FromToCurrencyPair): Boolean =
+            mockRates_EurUsdYen.containsKey(fromTo)
 }

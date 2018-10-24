@@ -14,11 +14,11 @@ interface ExchangeRateProvider {
      *
      * @throws RateNotAvailableException If there is no data available for this rate
      */
-    fun getExchangeRate(fromToCurrencyPair: FromToCurrencyPair): ExchangeRate
+    fun getExchangeRate(fromTo: FromToCurrencyPair): ExchangeRate
 
     /**
      * @return True if the provider contains the [ExchangeRate] for this [FromToCurrencyPair], false otherwise.
      */
-    fun isRateAvailable(fromToCurrencyPair: FromToCurrencyPair): Boolean
+    fun isRateAvailable(fromTo: FromToCurrencyPair): Boolean
 }
 
