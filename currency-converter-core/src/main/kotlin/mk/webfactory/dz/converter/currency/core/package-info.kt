@@ -1,6 +1,5 @@
-/*
-
-Core module v.0.1
+/**
+ * Core module v.0.1 - Lookup table. Boring.
 
 +--------------------+    +---------------------------+
 | FromToCurrencyPair |    | RateNotAvailableException |
@@ -25,6 +24,5 @@ Core module v.0.1
                             +---------------------+
 
 */
-
 package mk.webfactory.dz.converter.currency.core
 

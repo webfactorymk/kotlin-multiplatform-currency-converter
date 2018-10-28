@@ -3,22 +3,15 @@ package mk.webfactory.dz.converter.currency.core
 interface ExchangeRateProvider {
 
     /**
-     * Get all [ExchangeRate]s from this provider.
+     * The available base currencies that hold exchange rates from this provider.
      *
-     * @throws UnsupportedOperationException If operation is not supported by provider
+     * @return [Set] of available base [Currency]ies against which a calculation can be made.
      */
-    fun getAllExchangeRates(): Map<FromToCurrencyPair, ExchangeRate>
+    fun getAvailableBaseCurrencies(): Set<Currency>
 
     /**
-     * Get the [ExchangeRate] for this [FromToCurrencyPair].
-     *
-     * @throws RateNotAvailableException If there is no data available for this rate
+     * Get all [ExchangeRateData] entries from this provider.
      */
-    fun getExchangeRate(fromTo: FromToCurrencyPair): ExchangeRate
-
-    /**
-     * @return True if the provider contains the [ExchangeRate] for this [FromToCurrencyPair], false otherwise.
-     */
-    fun isRateAvailable(fromTo: FromToCurrencyPair): Boolean
+    fun getExchangeRates(): List<ExchangeRateData>
 }
 

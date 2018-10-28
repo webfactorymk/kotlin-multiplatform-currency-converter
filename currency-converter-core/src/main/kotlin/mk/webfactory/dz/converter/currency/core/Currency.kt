@@ -1,11 +1,18 @@
 package mk.webfactory.dz.converter.currency.core
 
-class Currency(caseInsensitiveTagId: String) { //todo add more info fields; test gson
+/**
+ * Currency representation. [tagId] is used as unique identifier; always uppercase.
+ *
+ * @param caseInsensitiveTagId The tag identifier for this currency. Is automatically uppercased. (example: EUR, USD, YEN...)
+ * @param preferredConversionBase The preferred base currency for conversions. (example: CAD -> base:USD -> YEN)
+ */
+class Currency(caseInsensitiveTagId: String, val preferredConversionBase: Currency? = null) {
 
     companion object {
         val EUR = Currency("EUR")
         val USD = Currency("USD")
         val YEN = Currency("YEN")
+        val MKD = Currency("MKD", EUR)
     }
 
     val tagId: String = caseInsensitiveTagId.toUpperCase()
@@ -24,3 +31,6 @@ class Currency(caseInsensitiveTagId: String) { //todo add more info fields; test
     }
 }
 
+infix fun Currency.convertTo(that: Currency) = FromToCurrencyPair(this, that)
+
+data class FromToCurrencyPair(val from: Currency, val to: Currency)
