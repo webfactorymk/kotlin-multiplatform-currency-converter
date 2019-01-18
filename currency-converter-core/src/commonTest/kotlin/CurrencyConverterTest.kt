@@ -1,11 +1,9 @@
-package mk.webfactory.dz.converter.core
-
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.EUR
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.USD
-import mk.webfactory.dz.converter.core.mock.MockProvider
 import mk.webfactory.dz.converter.currency.core.*
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.YEN
 import kotlin.test.*
+
 
 class CurrencyConverterTest {
 
