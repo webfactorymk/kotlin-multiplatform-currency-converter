@@ -1,0 +1,5 @@
+rootProject.name = 'currency-converter'
+
+include ':core'
+include ':android'
+
