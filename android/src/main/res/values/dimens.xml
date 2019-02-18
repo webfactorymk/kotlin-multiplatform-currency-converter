@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_frame_default_spacing">16dp</dimen>
+    <dimen name="component_spacing_medium">4dp</dimen>
+    <dimen name="component_spacing_large">8dp</dimen>
+    <dimen name="component_spacing_extra_large">16dp</dimen>
+
+    <dimen name="currency_amount_input_width">180dp</dimen>
+</resources>

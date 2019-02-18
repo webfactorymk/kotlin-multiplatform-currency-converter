@@ -7,7 +7,5 @@ pluginManagement {
         }
     }
 }
-rootProject.name = 'currency-converter-core'
+rootProject.name = 'core'
 
-
-enableFeaturePreview('GRADLE_METADATA')
