@@ -1,4 +1,4 @@
-package mk.webfactory.dz.converter.currency;
+package mk.webfactory.dz.converter.currency.app;
 
 import org.junit.Test;
 

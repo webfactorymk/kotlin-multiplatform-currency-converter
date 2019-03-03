@@ -1,12 +1,16 @@
-import mk.webfactory.dz.converter.currency.core.*
+package mk.webfactory.dz.converter.currency.rate.mock
+
+import mk.webfactory.dz.converter.currency.core.Currency
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.EUR
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.USD
 import mk.webfactory.dz.converter.currency.core.Currency.Companion.YEN
+import mk.webfactory.dz.converter.currency.core.ExchangeRateData
+import mk.webfactory.dz.converter.currency.core.ExchangeRateProvider
 import mk.webfactory.dz.converter.currency.core.Rate.BaseRate
 
 val mockRates_EurUsdYen: ExchangeRateData = ExchangeRateData(USD, 0, mapOf(
-    EUR to BaseRate(0.87f),
-    YEN to BaseRate(112.81f)))
+        EUR to BaseRate(0.87f),
+        YEN to BaseRate(112.81f)))
 
 
 class MockProvider : ExchangeRateProvider {

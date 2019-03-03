@@ -11,11 +11,14 @@
         android:id="@+id/txt_from_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="start"
+        android:labelFor="@+id/edit_from_amount"
         android:text="@string/common_from"
         android:textAllCaps="true"
         app:layout_constraintEnd_toStartOf="@+id/spinner_from_currency"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_from_currency"
@@ -26,7 +29,8 @@
         android:labelFor="@+id/edit_from_amount"
         app:layout_constraintEnd_toEndOf="@+id/edit_from_amount"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/txt_from_label" />
+        app:layout_constraintStart_toEndOf="@id/txt_from_label"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edit_from_amount"
@@ -45,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/component_spacing_large"
         android:gravity="start"
+        android:labelFor="@+id/edit_conversion_output"
         android:text="@string/common_to"
         android:textAllCaps="true"
         app:layout_constraintEnd_toStartOf="@+id/spinner_to_currency"
@@ -57,7 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/screen_frame_default_spacing"
         android:layout_marginStart="@dimen/component_spacing_large"
-        android:layout_marginTop="@dimen/component_spacing_large"
         android:labelFor="@+id/edit_conversion_output"
         app:layout_constraintEnd_toEndOf="@+id/edit_conversion_output"
         app:layout_constraintStart_toEndOf="@id/txt_to_label"
@@ -67,9 +71,11 @@
         android:id="@+id/edit_conversion_output"
         android:layout_width="@dimen/currency_amount_input_width"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/component_spacing_large"
         android:contentDescription="@string/acc_conversion_output"
         android:importantForAutofill="no"
         android:inputType="none"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_to_label"
         tools:ignore="UnusedAttribute" />
@@ -86,4 +92,14 @@
         app:layout_constraintBottom_toBottomOf="@id/edit_conversion_output"
         app:layout_constraintStart_toEndOf="@id/edit_from_amount"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/component_spacing_large"
+        android:text="@string/clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_conversion_output" />
+
 </android.support.constraint.ConstraintLayout>

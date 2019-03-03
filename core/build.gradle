@@ -1,26 +1,16 @@
-plugins {
-    id 'kotlin-multiplatform'
-}
-repositories {
-    mavenCentral()
-}
-group 'mk.webfactory.dz.converter.currency.core'
-version '0.1'
-
-apply plugin: 'maven-publish'
+apply plugin: 'kotlin-multiplatform'
 
 kotlin {
     targets {
-        fromPreset(presets.jvm, 'jvm')
-
         final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
                               ? presets.iosArm64 : presets.iosX64
         fromPreset(iOSTarget, 'iOS') {
             compilations.main.outputKinds('FRAMEWORK')
         }
+
+        fromPreset(presets.jvm, 'android')
     }
-    jvm()
-    js()
+
     sourceSets {
         commonMain {
             dependencies {
@@ -31,32 +21,19 @@ kotlin {
             dependencies {
                 implementation kotlin('test-common')
                 implementation kotlin('test-annotations-common')
+                implementation project(':rate-provider-mock')
             }
         }
-        jvmMain {
+        androidMain {
             dependencies {
                 implementation kotlin('stdlib-jdk8')
             }
         }
-        jvmTest {
+        androidTest {
             dependencies {
                 implementation kotlin('test')
                 implementation kotlin('test-junit')
             }
-        }
-        jsMain {
-            dependencies {
-                implementation kotlin('stdlib-js')
-            }
-        }
-        jsTest {
-            dependencies {
-                implementation kotlin('test-js')
-            }
-        }
-        iosMain {
-        }
-        iosTest {
         }
     }
 }

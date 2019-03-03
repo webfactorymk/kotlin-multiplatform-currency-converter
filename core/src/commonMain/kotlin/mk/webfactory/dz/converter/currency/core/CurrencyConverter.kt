@@ -35,6 +35,7 @@ class CurrencyConverter internal constructor(
     fun getAvailableCurrencies(): Set<Currency> {
         val resultSet: MutableSet<Currency> = LinkedHashSet()
         for (exchangeRate in exchangeRateProvider.getExchangeRates()) {
+            resultSet.add(exchangeRate.base)
             resultSet.addAll(exchangeRate.rates.keys)
         }
         return LinkedHashSet(resultSet.sortedBy { it.tagId })
@@ -45,6 +46,10 @@ class CurrencyConverter internal constructor(
      */
     fun isRateAvailable(from: Currency, to: Currency): Boolean {
         return rateCalculator.calc(FromToCurrencyPair(from, to), exchangeRateProvider.getExchangeRates()) != null
+    }
+
+    fun findCurrencyByTag(tag: String): Currency? {
+        return getAvailableCurrencies().find { currency -> currency.tagId.toLowerCase() == tag.toLowerCase() }
     }
 
     fun getExchangeRateProvider(): ExchangeRateProvider = exchangeRateProvider

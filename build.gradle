@@ -1,6 +1,3 @@
-group 'mk.webfactory.dz'
-version '1.0-SNAPSHOT'
-
 buildscript {
     ext.kotlin_version = '1.3.21'
     repositories {
@@ -19,4 +16,8 @@ allprojects {
         jcenter()
         maven { url 'https://maven.google.com' }
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

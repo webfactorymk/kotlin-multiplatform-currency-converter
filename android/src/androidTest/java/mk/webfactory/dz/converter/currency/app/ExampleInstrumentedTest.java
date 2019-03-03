@@ -1,4 +1,4 @@
-package mk.webfactory.dz.converter.currency;
+package mk.webfactory.dz.converter.currency.app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

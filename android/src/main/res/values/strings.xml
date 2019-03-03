@@ -3,4 +3,7 @@
     <string name="common_from">From</string>
     <string name="common_to">To</string>
     <string name="hint_convert_amount">1</string>
+    <string name="convert">Convert</string>
+    <string name="error_convert">Error converting currencies</string>
+    <string name="clear">Clear</string>
 </resources>

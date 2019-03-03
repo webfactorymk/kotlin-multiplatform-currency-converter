@@ -25,11 +25,11 @@ hs_err_pid*
 # IntelliJ
 .idea/
 .gradle
-gradle
 /*/local.properties
 /*/out
 /*/*/build
 build
+/build/
 /*/*/production
 *.iml
 *.iws
@@ -39,3 +39,15 @@ build
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle/wrapper/gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties

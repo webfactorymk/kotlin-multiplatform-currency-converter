@@ -1,5 +1,4 @@
-rootProject.name = 'currency-converter'
-
 include ':core'
+include ':rate-provider-mock'
 include ':android'
 

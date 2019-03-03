@@ -4,10 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
-
-
+    
     defaultConfig {
-        applicationId "mk.webfactory.dz.converter.currency"
+        applicationId "mk.webfactory.dz.converter.currency.app"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -23,11 +22,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':core')
+    debugImplementation project(':rate-provider-mock')
+
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.android.support:appcompat-v7:28.0.0'
