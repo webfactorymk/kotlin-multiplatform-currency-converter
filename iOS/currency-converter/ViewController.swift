@@ -7,14 +7,36 @@
 //
 
 import UIKit
+import main
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let currencyConverter = CurrencyConverter.Builder(
+            exchangeRateProvider: LocalMockRateProvider()
+            ).build()
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+        label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
+        label.font = label.font.withSize(25)
+        
+        label.text = [String](currencyConverter.getAvailableCurrencies().map { $0.tagId }).joined(separator: ", ")
+        
+        view.addSubview(label)
     }
+}
 
-
+class LocalMockRateProvider: ExchangeRateProvider {
+    
+    func getAvailableBaseCurrencies() -> Set<Currency> {
+        return [Currency(caseInsensitiveTagId: "USD", preferredConversionBase: nil)]
+    }
+    
+    func getExchangeRates() -> [ExchangeRateData] {
+        return []
+    }
 }
 

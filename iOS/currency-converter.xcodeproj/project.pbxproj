@@ -14,6 +14,8 @@
 		513CAE4C21FE631F0053A1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513CAE4A21FE631F0053A1CF /* LaunchScreen.storyboard */; };
 		513CAE5721FE631F0053A1CF /* currency_converterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CAE5621FE631F0053A1CF /* currency_converterTests.swift */; };
 		513CAE6221FE631F0053A1CF /* currency_converterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CAE6121FE631F0053A1CF /* currency_converterUITests.swift */; };
+		51A1D56C222F3B84006D8146 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A1D56B222F3B84006D8146 /* main.framework */; };
+		51A1D56D222F3B84006D8146 /* main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51A1D56B222F3B84006D8146 /* main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		51A1D56E222F3B84006D8146 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				51A1D56D222F3B84006D8146 /* main.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		513CAE3E21FE631E0053A1CF /* currency-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "currency-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		513CAE4121FE631E0053A1CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +63,7 @@
 		513CAE5D21FE631F0053A1CF /* currency-converterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "currency-converterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		513CAE6121FE631F0053A1CF /* currency_converterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_converterUITests.swift; sourceTree = "<group>"; };
 		513CAE6321FE631F0053A1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51A1D56B222F3B84006D8146 /* main.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = main.framework; path = "cc-frameworks/core/v1-0/main.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A1D56C222F3B84006D8146 /* main.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +95,7 @@
 		513CAE3521FE631E0053A1CF = {
 			isa = PBXGroup;
 			children = (
+				51A1D56B222F3B84006D8146 /* main.framework */,
 				513CAE4021FE631E0053A1CF /* currency-converter */,
 				513CAE5521FE631F0053A1CF /* currency-converterTests */,
 				513CAE6021FE631F0053A1CF /* currency-converterUITests */,
@@ -135,6 +154,7 @@
 				513CAE3A21FE631E0053A1CF /* Sources */,
 				513CAE3B21FE631E0053A1CF /* Frameworks */,
 				513CAE3C21FE631E0053A1CF /* Resources */,
+				51A1D56E222F3B84006D8146 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,6 +453,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cc-frameworks/core/v1-0",
+					"$(PROJECT_DIR)/cc-frameworks/rate-provider-mock/v1-0",
+				);
 				INFOPLIST_FILE = "currency-converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +476,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cc-frameworks/core/v1-0",
+					"$(PROJECT_DIR)/cc-frameworks/rate-provider-mock/v1-0",
+				);
 				INFOPLIST_FILE = "currency-converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
