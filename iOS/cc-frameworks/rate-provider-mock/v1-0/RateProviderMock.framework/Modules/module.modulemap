@@ -1,0 +1,6 @@
+framework module RateProviderMock {
+    umbrella header "RateProviderMock.h"
+
+    export *
+    module * { export * }
+}

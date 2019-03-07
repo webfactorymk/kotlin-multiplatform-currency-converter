@@ -1,0 +1,6 @@
+framework module CurrencyConverterCore {
+    umbrella header "CurrencyConverterCore.h"
+
+    export *
+    module * { export * }
+}

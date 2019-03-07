@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleExecutable</key>
-    <string>main</string>
+    <string>CurrencyConverterCore</string>
     <key>CFBundleIdentifier</key>
-    <string>mk.webfactory.dz.converter.currency.core.main</string>
+    <string>mk.webfactory.dz.converter.currency.core.CurrencyConverterCore</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>main</string>
+    <string>CurrencyConverterCore</string>
     <key>CFBundlePackageType</key>
     <string>FMWK</string>
     <key>CFBundleShortVersionString</key>
