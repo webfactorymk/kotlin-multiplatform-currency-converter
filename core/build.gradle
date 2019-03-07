@@ -63,4 +63,9 @@ task packForXCode(type: Sync) {
     }
 }
 
+task copyFrameworkToIosDir(type: Copy) {
+    from "${buildDir}/xcode-frameworks"
+    into '../iOS/cc-frameworks/core/v1-0'
+}
+
 tasks.build.dependsOn packForXCode
