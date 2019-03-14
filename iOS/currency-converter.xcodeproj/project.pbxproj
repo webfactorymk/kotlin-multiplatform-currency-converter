@@ -14,10 +14,8 @@
 		513CAE4C21FE631F0053A1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513CAE4A21FE631F0053A1CF /* LaunchScreen.storyboard */; };
 		513CAE5721FE631F0053A1CF /* currency_converterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CAE5621FE631F0053A1CF /* currency_converterTests.swift */; };
 		513CAE6221FE631F0053A1CF /* currency_converterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513CAE6121FE631F0053A1CF /* currency_converterUITests.swift */; };
-		5198279B2230A33A008637D6 /* CurrencyConverterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5198279A2230A33A008637D6 /* CurrencyConverterCore.framework */; };
-		5198279C2230A33A008637D6 /* CurrencyConverterCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5198279A2230A33A008637D6 /* CurrencyConverterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5198279F2230A34C008637D6 /* RateProviderMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5198279E2230A34C008637D6 /* RateProviderMock.framework */; };
-		519827A02230A34C008637D6 /* RateProviderMock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5198279E2230A34C008637D6 /* RateProviderMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51AEB3FE2239E737008E0A2C /* CurrencyConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51AEB3FD2239E736008E0A2C /* CurrencyConverter.framework */; };
+		51AEB3FF2239E737008E0A2C /* CurrencyConverter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51AEB3FD2239E736008E0A2C /* CurrencyConverter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,14 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5198279D2230A33A008637D6 /* Embed Frameworks */ = {
+		51AEB4002239E737008E0A2C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5198279C2230A33A008637D6 /* CurrencyConverterCore.framework in Embed Frameworks */,
-				519827A02230A34C008637D6 /* RateProviderMock.framework in Embed Frameworks */,
+				51AEB3FF2239E737008E0A2C /* CurrencyConverter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,8 +63,8 @@
 		513CAE5D21FE631F0053A1CF /* currency-converterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "currency-converterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		513CAE6121FE631F0053A1CF /* currency_converterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_converterUITests.swift; sourceTree = "<group>"; };
 		513CAE6321FE631F0053A1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5198279A2230A33A008637D6 /* CurrencyConverterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CurrencyConverterCore.framework; path = "cc-frameworks/core/v1-0/CurrencyConverterCore.framework"; sourceTree = "<group>"; };
-		5198279E2230A34C008637D6 /* RateProviderMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RateProviderMock.framework; path = "cc-frameworks/rate-provider-mock/v1-0/RateProviderMock.framework"; sourceTree = "<group>"; };
+		519827A12231333B008637D6 /* currency-converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "currency-converter-Bridging-Header.h"; sourceTree = "<group>"; };
+		51AEB3FD2239E736008E0A2C /* CurrencyConverter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CurrencyConverter.framework; path = "cc-frameworks/currency-converter/v1-0/CurrencyConverter.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5198279B2230A33A008637D6 /* CurrencyConverterCore.framework in Frameworks */,
-				5198279F2230A34C008637D6 /* RateProviderMock.framework in Frameworks */,
+				51AEB3FE2239E737008E0A2C /* CurrencyConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +96,8 @@
 		513CAE3521FE631E0053A1CF = {
 			isa = PBXGroup;
 			children = (
-				5198279E2230A34C008637D6 /* RateProviderMock.framework */,
-				5198279A2230A33A008637D6 /* CurrencyConverterCore.framework */,
+				51AEB3FD2239E736008E0A2C /* CurrencyConverter.framework */,
+				519827A12231333B008637D6 /* currency-converter-Bridging-Header.h */,
 				513CAE4021FE631E0053A1CF /* currency-converter */,
 				513CAE5521FE631F0053A1CF /* currency-converterTests */,
 				513CAE6021FE631F0053A1CF /* currency-converterUITests */,
@@ -160,7 +156,7 @@
 				513CAE3A21FE631E0053A1CF /* Sources */,
 				513CAE3B21FE631E0053A1CF /* Frameworks */,
 				513CAE3C21FE631E0053A1CF /* Resources */,
-				5198279D2230A33A008637D6 /* Embed Frameworks */,
+				51AEB4002239E737008E0A2C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -464,6 +460,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc-frameworks/core/v1-0",
 					"$(PROJECT_DIR)/cc-frameworks/rate-provider-mock/v1-0",
+					"$(PROJECT_DIR)/cc-frameworks/currency-converter/v1-0",
 				);
 				INFOPLIST_FILE = "currency-converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,6 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mk.webfactory.currency-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "currency-converter-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +485,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc-frameworks/core/v1-0",
 					"$(PROJECT_DIR)/cc-frameworks/rate-provider-mock/v1-0",
+					"$(PROJECT_DIR)/cc-frameworks/currency-converter/v1-0",
 				);
 				INFOPLIST_FILE = "currency-converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mk.webfactory.currency-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "currency-converter-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import CurrencyConverterCore
-import RateProviderMock
+import CurrencyConverter
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let currencyConverter = CurrencyConverter.Builder(exchangeRateProvider: MockProvider() as! ExchangeRateProvider).build()
+        let currencyConverter = ConfigurationKt.provideCurrencyConverter()
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
         label.center = CGPoint(x: 160, y: 285)

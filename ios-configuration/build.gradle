@@ -1,0 +1,54 @@
+plugins {
+    id 'kotlin-multiplatform'
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    targets {
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos")  \
+                               ? presets.iosArm64 : presets.iosX64
+        fromPreset(iOSTarget, 'iOS') {
+            binaries {
+                framework('CurrencyConverter')
+            }
+        }
+    }
+    sourceSets {
+        commonMain.dependencies {
+            api kotlin('stdlib-common')
+            api project(':core')
+            api project(':rate-provider-mock')
+        }
+    }
+}
+
+configurations {
+    compileClasspath
+}
+
+task packForXCode(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+    final String mode = project.findProperty("XCODE_CONFIGURATION")?.toUpperCase() ?: 'DEBUG'
+    final def framework = kotlin.targets.iOS.binaries.getFramework("CurrencyConverter", mode)
+
+    inputs.property "mode", mode
+    dependsOn framework.linkTask
+
+    from { framework.outputFile.parentFile }
+    into frameworkDir
+
+    doLast {
+        new File(frameworkDir, 'gradlew').with {
+            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
+            setExecutable(true)
+        }
+    }
+}
+
+task copyFrameworkToIosDir(type: Copy) {
+    from "${buildDir}/xcode-frameworks"
+    into '../iOS/cc-frameworks/currency-converter/v1-0'
+}
+
+tasks.build.dependsOn packForXCode
