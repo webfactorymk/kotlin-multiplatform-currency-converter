@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  currency-converter
 //
-//  Created by WF | Dimitar Zabaznoski on 1/27/19.
-//  Copyright © 2019 WebFactory. All rights reserved.
+//  Created by an android developer.
 //
 
 import UIKit
@@ -14,15 +13,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let currencyConverter = ConfigurationKt.provideCurrencyConverter()
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.font = label.font.withSize(25)
+        label.numberOfLines = 5
+        label.textAlignment = NSTextAlignment.left
         
-        label.text = [String](currencyConverter.getAvailableCurrencies().map { $0.tagId }).joined(separator: ", ")
+        let currencyConverter = ConfigurationKt.provideCurrencyConverter()
+        let rateProvider = currencyConverter.getExchangeRateProvider()
+        let rateData = rateProvider.getExchangeRates().first
         
+        if (rateData != nil) {
+            label.text = "Base currency: " + rateData!.base.tagId + "\n\n"
+                + rateData!.rates.map({ (key: CoreCurrency, value: CoreRate) -> String in
+                    (key.tagId + " " + value.middleRate.description) })
+                .joined(separator: "\n")
+        }
         view.addSubview(label)
     }
 }
