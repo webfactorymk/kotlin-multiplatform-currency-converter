@@ -1,4 +1,4 @@
-$dokka.format:html
-$dokka.linkExtension:html
-$dokka.location:mk.webfactory.dz.converter.currency.core$round(kotlin.Float, kotlin.Int)mk.webfactory.dz.converter.currency.core/kotlin.-float/round.html
+$dokka.format:markdown
+$dokka.linkExtension:md
+$dokka.location:mk.webfactory.dz.converter.currency.core$round(kotlin.Float, kotlin.Int)mk.webfactory.dz.converter.currency.core/kotlin.-float/round.md
 mk.webfactory.dz.converter.currency.core
