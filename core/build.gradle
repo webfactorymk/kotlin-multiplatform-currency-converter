@@ -1,4 +1,7 @@
-apply plugin: 'kotlin-multiplatform'
+plugins {
+    id 'kotlin-multiplatform'
+    id 'org.jetbrains.dokka' version '0.9.18'
+}
 
 kotlin {
     targets {
@@ -38,6 +41,18 @@ kotlin {
             }
         }
     }
+}
+
+dokka {
+    impliedPlatforms = ["Common"]
+    kotlinTasks { [] }
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc/common"
+    sourceRoot {
+        path = kotlin.sourceSets.commonMain.kotlin.srcDirs[0]
+        platforms = ["Common"]
+    }
+
 }
 
 configurations {
