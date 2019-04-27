@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Currency - core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">core</a>&nbsp;/&nbsp;<a href="../index.html">mk.webfactory.dz.converter.currency.core</a>&nbsp;/&nbsp;<a href="./index.html">Currency</a><br/>
+<br/>
+<h1>Currency</h1>
+<code><span class="keyword">class </span><span class="identifier">Currency</span></code>
+<p>Currency representation. <a href="tag-id.html">tagId</a> is used as unique identifier; always uppercase.</p>
+<h3>Parameters</h3>
+<p><a name="caseInsensitiveTagId"></a>
+<code>caseInsensitiveTagId</code> - The tag identifier for this currency. Is automatically uppercased. (example: EUR, USD, YEN...)</p>
+<p><a name="preferredConversionBase"></a>
+<code>preferredConversionBase</code> - The preferred base currency for conversions. (example: CAD -&gt; base:USD -&gt; YEN)</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Currency</span><span class="symbol">(</span><span class="identifier" id="mk.webfactory.dz.converter.currency.core.Currency$<init>(kotlin.String, mk.webfactory.dz.converter.currency.core.Currency)/caseInsensitiveTagId">caseInsensitiveTagId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="mk.webfactory.dz.converter.currency.core.Currency$<init>(kotlin.String, mk.webfactory.dz.converter.currency.core.Currency)/preferredConversionBase">preferredConversionBase</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Currency</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span></code>
+<p>Currency representation. <a href="tag-id.html">tagId</a> is used as unique identifier; always uppercase.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="preferred-conversion-base.html">preferredConversionBase</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">preferredConversionBase</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Currency</span></a><span class="symbol">?</span></code>
+<p>The preferred base currency for conversions. (example: CAD -&gt; base:USD -&gt; YEN)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="tag-id.html">tagId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">tagId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="mk.webfactory.dz.converter.currency.core.Currency$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-e-u-r.html">EUR</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">EUR</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Currency</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-k-d.html">MKD</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">MKD</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Currency</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-u-s-d.html">USD</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">USD</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Currency</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-y-e-n.html">YEN</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">YEN</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Currency</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../convert-to.html">convertTo</a></p>
+</td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Currency</span></a><span class="symbol">.</span><span class="identifier">convertTo</span><span class="symbol">(</span><span class="identifier" id="mk.webfactory.dz.converter.currency.core$convertTo(mk.webfactory.dz.converter.currency.core.Currency, mk.webfactory.dz.converter.currency.core.Currency)/that">that</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Currency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-from-to-currency-pair/index.html"><span class="identifier">FromToCurrencyPair</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

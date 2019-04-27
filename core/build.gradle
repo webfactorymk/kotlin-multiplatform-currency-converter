@@ -47,7 +47,7 @@ dokka {
     impliedPlatforms = ["Common"]
     kotlinTasks { [] }
     outputFormat = 'html'
-    outputDirectory = "$buildDir/javadoc/common"
+    outputDirectory = "./javadoc/common"
     sourceRoot {
         path = kotlin.sourceSets.commonMain.kotlin.srcDirs[0]
         platforms = ["Common"]
