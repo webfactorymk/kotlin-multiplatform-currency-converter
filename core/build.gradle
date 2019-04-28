@@ -46,7 +46,7 @@ kotlin {
 dokka {
     impliedPlatforms = ["Common"]
     kotlinTasks { [] }
-    outputFormat = 'markdown'
+    outputFormat = 'html'
     outputDirectory = "./core/javadoc/common"
     sourceRoot {
         path = kotlin.sourceSets.commonMain.kotlin.srcDirs[0]

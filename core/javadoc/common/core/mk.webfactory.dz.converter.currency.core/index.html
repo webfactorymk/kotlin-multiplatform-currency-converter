@@ -16,7 +16,9 @@
 <p><a href="-conversion-result/index.html">ConversionResult</a></p>
 </td>
 <td>
-<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ConversionResult</span></code></td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ConversionResult</span></code>
+<p>A result of an exchange rate conversion.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -32,7 +34,10 @@
 <p><a href="-currency-converter/index.html">CurrencyConverter</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">CurrencyConverter</span></code></td>
+<code><span class="keyword">class </span><span class="identifier">CurrencyConverter</span></code>
+<p>Main point for using this module.
+Given an <a href="-exchange-rate-provider/index.html">ExchangeRateProvider</a>, calculates <a href="-rate/index.html">exchange rates</a>.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -48,21 +53,29 @@
 <p><a href="-exchange-rate-provider/index.html">ExchangeRateProvider</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ExchangeRateProvider</span></code></td>
+<code><span class="keyword">interface </span><span class="identifier">ExchangeRateProvider</span></code>
+<p>Source of data for the <a href="-currency-converter/index.html">CurrencyConverter</a>.</p>
+</td>
 </tr>
 <tr>
 <td>
 <p><a href="-from-to-currency-pair/index.html">FromToCurrencyPair</a></p>
 </td>
 <td>
-<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FromToCurrencyPair</span></code></td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FromToCurrencyPair</span></code>
+<p>A FROM -&gt; TO pair of <a href="-currency/index.html">currencies</a>. Used for convenience.</p>
+</td>
 </tr>
 <tr>
 <td>
 <p><a href="-rate/index.html">Rate</a></p>
 </td>
 <td>
-<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Rate</span></code></td>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Rate</span></code>
+<p>Base class for representing an exchange rate.
+The rate can be <a href="-rate/-base-rate/index.html">basic</a> containing only the middleRate
+or <a href="-rate/-extended-rate/index.html">extended</a> containing the buying and selling rate.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +87,9 @@
 <p><a href="-rate-not-available-exception/index.html">RateNotAvailableException</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">RateNotAvailableException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code></td>
+<code><span class="keyword">class </span><span class="identifier">RateNotAvailableException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>Thrown when a rate can not be calculated.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -98,7 +113,9 @@
 <p><a href="convert-to.html">convertTo</a></p>
 </td>
 <td>
-<code><span class="keyword">infix</span> <span class="keyword">fun </span><a href="-currency/index.html"><span class="identifier">Currency</span></a><span class="symbol">.</span><span class="identifier">convertTo</span><span class="symbol">(</span><span class="identifier" id="mk.webfactory.dz.converter.currency.core$convertTo(mk.webfactory.dz.converter.currency.core.Currency, mk.webfactory.dz.converter.currency.core.Currency)/that">that</span><span class="symbol">:</span>&nbsp;<a href="-currency/index.html"><span class="identifier">Currency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-from-to-currency-pair/index.html"><span class="identifier">FromToCurrencyPair</span></a></code></td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><a href="-currency/index.html"><span class="identifier">Currency</span></a><span class="symbol">.</span><span class="identifier">convertTo</span><span class="symbol">(</span><span class="identifier" id="mk.webfactory.dz.converter.currency.core$convertTo(mk.webfactory.dz.converter.currency.core.Currency, mk.webfactory.dz.converter.currency.core.Currency)/that">that</span><span class="symbol">:</span>&nbsp;<a href="-currency/index.html"><span class="identifier">Currency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-from-to-currency-pair/index.html"><span class="identifier">FromToCurrencyPair</span></a></code>
+<p>Creates a <a href="-from-to-currency-pair/index.html">FromToCurrencyPair</a>.</p>
+</td>
 </tr>
 </tbody>
 </table>
