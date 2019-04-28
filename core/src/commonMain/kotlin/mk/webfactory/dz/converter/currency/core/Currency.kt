@@ -31,6 +31,12 @@ class Currency(caseInsensitiveTagId: String, val preferredConversionBase: Curren
     }
 }
 
+/**
+ * Creates a [FromToCurrencyPair].
+ */
 infix fun Currency.convertTo(that: Currency) = FromToCurrencyPair(this, that)
 
+/**
+ * A FROM -> TO pair of [currencies][Currency]. Used for convenience.
+ */
 data class FromToCurrencyPair(val from: Currency, val to: Currency)

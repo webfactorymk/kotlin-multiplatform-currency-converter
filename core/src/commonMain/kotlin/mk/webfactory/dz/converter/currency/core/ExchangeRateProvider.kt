@@ -1,5 +1,8 @@
 package mk.webfactory.dz.converter.currency.core
 
+/**
+ * Source of data for the [CurrencyConverter].
+ */
 interface ExchangeRateProvider {
 
     /**

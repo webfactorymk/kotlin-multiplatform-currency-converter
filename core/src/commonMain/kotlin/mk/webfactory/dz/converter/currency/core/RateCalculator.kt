@@ -1,5 +1,8 @@
 package mk.webfactory.dz.converter.currency.core
 
+/**
+ * Calculates the exchange rate of one currency to another using the provided exchange rates.
+ */
 internal interface RateCalculator {
 
     /**

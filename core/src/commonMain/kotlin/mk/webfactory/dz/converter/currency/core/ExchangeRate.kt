@@ -11,7 +11,9 @@ data class ExchangeRateData(
         val timestampUtc: Long,
         val rates: Map<Currency, Rate>)
 
-
+/**
+ * A result of an exchange rate conversion.
+ */
 data class ConversionResult(
         val from: Currency,
         val to: Currency,
@@ -24,7 +26,11 @@ data class ConversionResult(
     }
 }
 
-
+/**
+ * Base class for representing an exchange rate.
+ * The rate can be [basic][BaseRate] containing only the middleRate
+ * or [extended][ExtendedRate] containing the buying and selling rate.
+ */
 sealed class Rate(val middleRate: Float) {
     class BaseRate(middleRate: Float) : Rate(middleRate)
     class ExtendedRate(middleRate: Float, val buyingRate: Float, val sellingRate: Float) : Rate(middleRate)
@@ -46,4 +52,7 @@ sealed class Rate(val middleRate: Float) {
     }
 }
 
+/**
+ * Extension for rounding a float to less decimal points.
+ */
 fun Float.round(decimals: Int): Float = (this * 10f.pow(decimals)).roundToInt() / 10f.pow(decimals)

@@ -1,5 +1,9 @@
 package mk.webfactory.dz.converter.currency.core
 
+/**
+ * Main point for using this module.
+ * Given an [ExchangeRateProvider], calculates [exchange rates][Rate].
+ */
 class CurrencyConverter internal constructor(
         private val exchangeRateProvider: ExchangeRateProvider,
         private val rateCalculator: RateCalculator) {
@@ -24,13 +28,15 @@ class CurrencyConverter internal constructor(
     }
 
     /**
-     * Convenience for [convert]
+     * Convenience for [convert].
      */
     fun convert(from: Currency, to: Currency, amountToConvert: Float = 1f) =
             convert(FromToCurrencyPair(from, to), amountToConvert)
 
     /**
-     * @return LinkedSet containing the available currencies from the [ExchangeRateProvider] sorted by [Currency.tagId].
+     * Returns the available currencies of the provided [ExchangeRateProvider].
+     *
+     * @return LinkedSet containing the available currencies sorted by [Currency.tagId]
      */
     fun getAvailableCurrencies(): Set<Currency> {
         val resultSet: MutableSet<Currency> = LinkedHashSet()
@@ -42,18 +48,29 @@ class CurrencyConverter internal constructor(
     }
 
     /**
-     * @return True if the provider contains the exchange rate for this currency pair, false otherwise.
+     * Checks if an exchange rate can be calculated for the given currency pair.
+     *
+     * @return True if the provider contains the exchange rate for this currency pair, false otherwise
      */
     fun isRateAvailable(from: Currency, to: Currency): Boolean {
         return rateCalculator.calc(FromToCurrencyPair(from, to), exchangeRateProvider.getExchangeRates()) != null
     }
 
+    /**
+     * Returns the currency for the given tag, if one exists in the [ExchangeRateProvider].
+     */
     fun findCurrencyByTag(tag: String): Currency? {
         return getAvailableCurrencies().find { currency -> currency.tagId.toLowerCase() == tag.toLowerCase() }
     }
 
+    /**
+     * Returns the [ExchangeRateProvider] used by this instance.
+     */
     fun getExchangeRateProvider(): ExchangeRateProvider = exchangeRateProvider
 
+    /**
+     * Builder for the [CurrencyConverter]. Takes an [ExchangeRateProvider] as main source of data.
+     */
     class Builder(private val exchangeRateProvider: ExchangeRateProvider) {
 
         fun build(): CurrencyConverter = CurrencyConverter(exchangeRateProvider, BasicRateCalculator())
