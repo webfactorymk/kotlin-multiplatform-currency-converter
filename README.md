@@ -19,7 +19,7 @@ The motivation for breaking the shared code into modules is to prevent it from g
 Instead we should aim to create many components, independent from one another, providing a very focused set of functionality. Client apps then have complete control over what they depend on and use.
 
 We can modularize our app around features. In the following example, the currency converter is one feature in a much larger system, that is developed independently from other components, e.g. analytics or user management. 
-We can further develop the currency converter by abstracting away dependencies to external resources, infrastructure, allowing us to e.g. easily switch servers or using different HTTP clients on different platforms. 
+We can further develop the currency converter by abstracting away dependencies to external resources and infrastructure, allowing us to e.g. easily switch servers or use different HTTP clients on different platforms. 
 
 The architecture followed in this sample is Hexagonal Architecture (a.k.a. Ports and Adapters).
 Hexagonal architecture isolates the central logic of our application from the outside concerns by placing the inputs and outputs at the edge of our design. This allows us to easily swap their implementation without changing the central logic.
@@ -101,5 +101,5 @@ For this sample, an empty gradle project was created and modules were gradually 
 
 # Summary
 
-Breaking the shared code into multiple modules that serve a specific purpose will create components with limited scope that are more readable, reliable, and maintainable. Client applications can then choose what they need and tailor a specific configuration that will best fit the platform. The benefits of this design over having one all-purpose shared module is worth considering.
+Breaking the shared code into multiple modules that serve a specific purpose will create components with limited scope that are more readable, reliable, and maintainable. Client applications can then choose what they need and tailor a specific configuration that will best fit the platform. The benefits of this design over having one all-purpose shared module are worth considering.
 
